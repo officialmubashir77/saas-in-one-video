@@ -1,0 +1,84 @@
+// ___________________________________
+// 1.) Variables ==> Data Store
+// ___________________________________
+
+$var-bg : #dadada;
+$var-color-yellow : yellow;
+$var-fnt-lg : 50px;
+$var-fnt-sm : 30px;
+
+body {
+    // background-color: tomato;
+    // background-color: $var-bg;
+}
+
+h1 {
+    font-size: $var-fnt-lg;
+    color: $var-color-yellow;
+}
+
+@media screen and (max-width : 900px) {
+    h1 {
+        font-size: $var-fnt-sm;
+    }
+}
+
+// ___________________________________
+// Nesting in SCSS
+// ___________________________________
+
+header {
+    background-color: $var-color-yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+
+    h2 {
+        font-family: 'poppins';
+    }
+
+    // nav a {
+    //     color: #ffffff;
+    // }    
+
+    nav {
+        a {
+            color: #000000;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+    }
+
+    button {
+        background-color: darkred;
+        color: white;
+        border: 2px solid black;
+        font-size: $var-fnt-sm;
+    }
+}
+
+// ___________________________________
+// Operators in SCSS +-/*
+// ___________________________________
+// Operators is rarely used 
+header {
+    nav {
+        a {
+            margin-right: 20px * 2;
+        }
+    }
+
+}
+
+
+
+// ___________________________________
+// Map in SCSS +-/*
+// ___________________________________
+
+$font-size : ("mobile" : 16px , "tablet" : 25px , "desktop" : 70px);
+
+h2{
+    font-size: map-get($map: $font-size, $mobile : );
+}
